@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - G.K. Building Material Supplier</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1d3d8f;--secondary:#e63946;--light:#fff;--dark:#222;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
+.top-contact{background:var(--secondary);color:white;text-align:center;padding:0.5rem;font-weight:600;position:sticky;top:0;z-index:1000;}
+.top-contact a{color:white;text-decoration:none;}
+nav{background: var(--primary);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:1rem 2rem;position:sticky;top:0;z-index:1000;}
+.logo{ font-size:1.5rem;font-weight:700;color:white;cursor:pointer; transition: transform 0.3s; }
+.logo:hover{ transform: scale(1.1) rotate(-5deg); }
+nav a{color:white;margin:0 10px;font-weight:600;text-decoration:none;transition:0.3s;}
+nav a:hover, nav a.active{color: var(--secondary); transform: scale(1.1);}
+header{background: url('hero-bg.jpg') center/cover no-repeat; height:50vh; display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;position:relative;}
+header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+header h1, header p{position:relative; z-index:2; text-shadow:2px 2px 5px rgba(0,0,0,0.5);}
+header h1{font-size:3rem; animation:slideDown 1s ease-out;}
+header p{font-size:1.2rem; animation:slideDown 1.2s ease-out;}
+@keyframes slideDown{0%{opacity:0;transform:translateY(-50px);}100%{opacity:1;transform:translateY(0);} }
+section{padding:4rem 1rem; max-width:1200px;margin:auto;}
+h2{text-align:center;margin-bottom:2rem;color:var(--primary);}
+.box{background:#f9f9f9; padding:2rem; border-radius:12px; margin-bottom:3rem; border-left:5px solid var(--secondary); box-shadow:0 4px 12px rgba(0,0,0,0.05); opacity:0; transform:translateY(30px); transition:all 0.8s ease-out;}
+.box.visible{opacity:1; transform:translateY(0);}
+.card{background:white;border-radius:12px;padding:2rem;text-align:center;border:2px solid var(--primary);transition:transform 0.3s, box-shadow 0.3s; opacity:0; transform:translateY(30px);}
+.card.visible{opacity:1; transform:translateY(0);}
+.card:hover{transform:translateY(-10px) scale(1.03); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+ul{list-style:none;padding-left:1rem;}
+ul li::before{content:"✅ "; color:var(--secondary);}
+footer{text-align:center; background:var(--primary); color:white; padding:1rem; margin-top:2rem; font-size:0.9rem;}
+.btn{display:inline-block;background:var(--secondary);color:white;padding:12px 25px;margin:20px 0;border-radius:8px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.btn:hover{ background:var(--primary); transform:scale(1.05) rotate(-2deg); }
+</style>
+</head>
+<body>
+
+<div class="top-contact">📞 <a href="tel:9268027550">9268027550</a> | <a href="tel:8851907500">8851907500</a></div>
+
+<nav>
+<div class="logo">G.K. Building Material</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About Us</a>
+<a href="products.html">Products</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<header>
+<h1>About Us</h1>
+<p>Trusted Supplier for Construction Materials</p>
+</header>
+
+<section class="box fade-in">
+<h2>Who We Are</h2>
+<p><b>G.K. Building Material Supplier</b> has been a reliable partner in the construction industry, providing everything from bricks to cement. We focus on quality, affordability, and timely delivery.</p>
+<p>With years of experience, we’ve built a reputation for trust and efficiency. Whether you’re a contractor, builder, or homeowner, we are here to serve your needs.</p>
+</section>
+
+<section class="box fade-in">
+<h2>Why Choose Us?</h2>
+<ul>
+<li>Trusted supplier in Delhi NCR for over 10 years</li>
+<li>Premium quality materials</li>
+<li>Wholesale & retail pricing</li>
+<li>Reliable delivery services</li>
+<li>Customer-first approach</li>
+</ul>
+</section>
+
+<section class="box fade-in">
+<h2>Contact & Timings</h2>
+<p><b>Phone:</b> 9268027550, 8851907500</p>
+<p><b>Email:</b> <a href="mailto:govindj1977@gmail.com">govindj1977@gmail.com</a> | Backup: <a href="mailto:jhaa7228@gmail.com">jhaa7228@gmail.com</a></p>
+<p><b>Address:</b> Pooth Khurd, Bawana, Delhi - 110039</p>
+<p><b>Timings:</b> 8:00 AM - 7:00 PM</p>
+<a href="contact.html" class="btn">Get in Touch</a>
+</section>
+
+<footer>
+<p>&copy; 2025 G.K. Building Material Supplier | All Rights Reserved</p>
+</footer>
+
+<script>
+const elements=document.querySelectorAll('.fade-in,.box,.card');
+const observer=new IntersectionObserver((entries,obs)=>{
+entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});
+},{threshold:0.2});
+elements.forEach(el=>observer.observe(el));
+const logo=document.querySelector('.logo');
+logo.addEventListener('click',()=>{logo.style.transform='scale(1.2) rotate(-10deg)';setTimeout(()=>{logo.style.transform='scale(1) rotate(0deg)';},600);});
+</script>
+
+</body>
+</html>

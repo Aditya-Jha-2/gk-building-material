@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - G.K. Building Material Supplier</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1d3d8f;--secondary:#e63946;--light:#fff;--dark:#222;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
+.top-contact{background:var(--secondary);color:white;text-align:center;padding:0.5rem;font-weight:600;position:sticky;top:0;z-index:1000;}
+.top-contact a{color:white;text-decoration:none;}
+nav{background: var(--primary);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:1rem 2rem;position:sticky;top:0;z-index:1000;}
+.logo{ font-size:1.5rem;font-weight:700;color:white;cursor:pointer; transition: transform 0.3s; }
+.logo:hover{ transform: scale(1.1) rotate(-5deg); }
+nav a{color:white;margin:0 10px;font-weight:600;text-decoration:none;transition:0.3s;}
+nav a:hover, nav a.active{color: var(--secondary); transform: scale(1.1);}
+header{background: url('hero-bg.jpg') center/cover no-repeat; height:40vh; display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;position:relative;}
+header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+header h1, header p{position:relative; z-index:2; text-shadow:2px 2px 5px rgba(0,0,0,0.5);}
+header h1{font-size:3rem; animation:slideDown 1s ease-out;}
+header p{font-size:1.2rem; animation:slideDown 1.2s ease-out;}
+@keyframes slideDown{0%{opacity:0;transform:translateY(-50px);}100%{opacity:1;transform:translateY(0);} }
+section{padding:4rem 1rem; max-width:1200px;margin:auto;}
+h2{text-align:center;margin-bottom:2rem;color:var(--primary);}
+.box{background:#f9f9f9; padding:2rem; border-radius:12px; margin-bottom:3rem; border-left:5px solid var(--secondary); box-shadow:0 4px 12px rgba(0,0,0,0.05); opacity:0; transform:translateY(30px); transition:all 0.8s ease-out;}
+.box.visible{opacity:1; transform:translateY(0);}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
+.grid img{width:100%; border-radius:12px; border:2px solid var(--primary); opacity:0; transform:translateY(30px); transition: all 0.5s ease-out;}
+.grid img.visible{opacity:1; transform:translateY(0);}
+.grid img:hover{transform: scale(1.05) rotate(-1deg);}
+.btn{display:inline-block;background:var(--secondary);color:white;padding:12px 25px;margin:20px 0;border-radius:8px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.btn:hover{ background:var(--primary); transform:scale(1.05) rotate(-2deg); }
+footer{text-align:center; background:var(--primary); color:white; padding:1rem; margin-top:2rem; font-size:0.9rem;}
+</style>
+</head>
+<body>
+
+<div class="top-contact">📞 <a href="tel:9268027550">9268027550</a> | <a href="tel:8851907500">8851907500</a></div>
+
+<nav>
+<div class="logo">G.K. Building Material</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="products.html">Products</a>
+<a href="gallery.html" class="active">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<header>
+<h1>Gallery</h1>
+<p>Our Work & Materials</p>
+</header>
+
+<section class="box fade-in">
+<h2>Photos</h2>
+<div class="grid">
+<img src="brick.jpg" alt="Bricks" class="fade-in">
+<img src="sand.jpg" alt="Sand" class="fade-in">
+<img src="truck.jpg" alt="Truck" class="fade-in">
+</div>
+<a href="contact.html" class="btn">Get a Quote / Contact Us</a>
+</section>
+
+<footer>
+<p>&copy; 2025 G.K. Building Material Supplier | All Rights Reserved</p>
+</footer>
+
+<script>
+const elements=document.querySelectorAll('.fade-in,.box,.grid img');
+const observer=new IntersectionObserver((entries,obs)=>{
+entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}});
+},{threshold:0.2});
+elements.forEach(el=>observer.observe(el));
+const logo=document.querySelector('.logo');
+logo.addEventListener('click',()=>{logo.style.transform='scale(1.2) rotate(-10deg)';setTimeout(()=>{logo.style.transform='scale(1) rotate(0deg)';},600);});
+</script>
+
+</body>
+</html>

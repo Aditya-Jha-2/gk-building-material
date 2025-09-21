@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G.K. Building Material Supplier</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1d3d8f;
+  --secondary: #e63946;
+  --light: #ffffff;
+  --dark: #222;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--light);color:var(--dark);line-height:1.6;overflow-x:hidden;}
+
+.top-contact{background:var(--secondary);color:white;text-align:center;padding:0.5rem;font-weight:600;position:sticky;top:0;z-index:1000;}
+.top-contact a{color:white;text-decoration:none;}
+
+nav{
+  background: var(--primary);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  padding:1rem 2rem;position:sticky;top:0;z-index:1000;
+}
+.logo{ font-size:1.5rem;font-weight:700;color:white;cursor:pointer; transition: transform 0.3s; }
+.logo:hover{ transform: scale(1.1) rotate(-5deg); }
+nav a{color:white;margin:0 10px;font-weight:600;text-decoration:none;transition:0.3s;}
+nav a:hover, nav a.active{color: var(--secondary); transform: scale(1.1);}
+
+.hero{
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  height:80vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;color:white;position:relative;overflow:hidden;
+}
+.hero .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+.hero-content{position:relative; z-index:2; animation:slideDown 1s ease-out;}
+.hero-content h1{font-size:3rem;text-shadow:2px 2px 10px rgba(0,0,0,0.5);}
+.hero-content p{font-size:1.3rem;margin:1rem 0;text-shadow:1px 1px 5px rgba(0,0,0,0.5);}
+.hero-buttons a{margin:10px;}
+
+@keyframes slideDown{0%{opacity:0;transform:translateY(-50px);}100%{opacity:1;transform:translateY(0);}}
+
+.btn{display:inline-block;background:var(--secondary);color:white;padding:12px 25px;margin:10px;border-radius:8px;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.btn:hover{ background:var(--primary); transform:scale(1.05) rotate(-2deg); }
+.btn-light{background:white;color:var(--primary);}
+
+section{padding:4rem 1rem; max-width:1200px;margin:auto;}
+h2{text-align:center;margin-bottom:2rem;color:var(--primary);}
+.box{background:#f9f9f9; padding:2rem; border-radius:12px; margin-bottom:3rem; border-left:5px solid var(--secondary); box-shadow:0 4px 12px rgba(0,0,0,0.05); opacity:0; transform:translateY(30px); transition:all 0.8s ease-out;}
+.box.visible{opacity:1; transform:translateY(0);}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+.card{background:white;border-radius:12px;padding:2rem;text-align:center;border:2px solid var(--primary);transition:transform 0.3s,box-shadow 0.3s;opacity:0;transform:translateY(30px);}
+.card.visible{opacity:1;transform:translateY(0);}
+.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.price-table{width:100%;border-collapse:collapse;margin-top:1rem;}
+.price-table th, .price-table td{border:1px solid #ddd;padding:12px;text-align:left;}
+.price-table th{background-color:var(--primary);color:white;}
+.price-table tr:nth-child(even){background-color:#f2f2f2;}
+.gallery-preview img{width:100%;border-radius:10px;border:2px solid var(--primary);transition:transform 0.4s;}
+.gallery-preview img:hover{transform:scale(1.05) rotate(-1deg);}
+footer{text-align:center; background:var(--primary); color:white; padding:1rem; margin-top:2rem; font-size:0.9rem;}
+.fade-in{opacity:0;transform:translateY(20px);transition:all 0.8s ease-out;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.contact-info p{margin:10px 0;font-size:1.1rem;}
+.contact-info a{color:var(--primary);text-decoration:none;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="top-contact">📞 <a href="tel:9268027550">9268027550</a> | <a href="tel:8851907500">8851907500</a></div>
+
+<nav>
+  <div class="logo">G.K. Building Material</div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>G.K. Building Material Supplier</h1>
+    <p>Retail & Wholesale Dealer of Bricks, Stone Dust, Cement & More</p>
+    <div class="hero-buttons">
+      <a href="tel:9268027550" class="btn">📞 Call Now</a>
+      <a href="contact.html" class="btn btn-light">📍 Directions</a>
+    </div>
+  </div>
+</header>
+
+<section class="box fade-in">
+  <h2>Welcome</h2>
+  <p><b>G.K. Building Material Supplier</b> is your trusted partner for all types of building materials. We provide premium-quality bricks, stone dust, cement, and reliable delivery services across Delhi NCR.</p>
+</section>
+
+<section class="services">
+<h2>Our Products</h2>
+<div class="grid">
+<div class="card fade-in"><h3>🧱 Bricks</h3><p>High strength and durable red bricks.</p></div>
+<div class="card fade-in"><h3>🪨 Stone Dust</h3><p>Finest quality dust for construction.</p></div>
+<div class="card fade-in"><h3>🏗 Cement</h3><p>Top brands with guaranteed strength.</p></div>
+<div class="card fade-in"><h3>🚜 Delivery</h3><p>Fast supply with tractor trolleys & trucks.</p></div>
+</div>
+</section>
+
+<section class="box fade-in">
+<h2>Why Choose Us?</h2>
+<ul>
+<li>✅ Trusted supplier in Delhi for over 10 years</li>
+<li>✅ Wholesale & retail pricing</li>
+<li>✅ Quality assurance on every product</li>
+<li>✅ Fast & reliable delivery service</li>
+</ul>
+</section>
+
+<section class="box fade-in">
+<h2>Price List (Delhi NCR)</h2>
+<table class="price-table">
+<tr><th>Material</th><th>Unit</th><th>Approx Price</th></tr>
+<tr><td>Cement (50 kg bag)</td><td>Per Bag</td><td>₹ 370 – ₹ 390</td></tr>
+<tr><td>UltraTech Cement</td><td>Per Bag</td><td>~ ₹ 380</td></tr>
+<tr><td>Bricks (Red Bricks)</td><td>Per Piece</td><td>₹ 8</td></tr>
+<tr><td>Badarpur Sand</td><td>Per Cubic Feet</td><td>₹ 65 – ₹ 75</td></tr>
+<tr><td>Khanger (Fine Aggregate)</td><td>Per Unit</td><td>~ ₹ 30</td></tr>
+</table>
+</section>
+
+<section class="gallery-preview fade-in">
+<h2>Our Work</h2>
+<div class="grid">
+<img src="brick.jpg" alt="Bricks">
+<img src="sand.jpg" alt="Sand">
+<img src="truck.jpg" alt="Truck">
+</div>
+<a href="gallery.html" class="btn">View Full Gallery →</a>
+</section>
+
+<section class="box fade-in contact-info">
+<h2>Get in Touch</h2>
+<p><b>Phone:</b> <a href="tel:9268027550">9268027550</a>, <a href="tel:8851907500">8851907500</a></p>
+<p><b>Email:</b> <a href="mailto:govindj1977@gmail.com">govindj1977@gmail.com</a> | Backup: <a href="mailto:jhaa7228@gmail.com">jhaa7228@gmail.com</a></p>
+<p><b>Timings:</b> 8:00 AM - 7:00 PM</p>
+<a href="contact.html" class="btn btn-light">Go to Contact Page</a>
+</section>
+
+<footer>
+<p>&copy; 2025 G.K. Building Material Supplier | All Rights Reserved</p>
+</footer>
+
+<script>
+// Scroll fade-in
+const fadeElements = document.querySelectorAll('.fade-in, .card, .box');
+const observer = new IntersectionObserver((entries, obs)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible'); obs.unobserve(entry.target);}
+});
+},{threshold:0.2});
+fadeElements.forEach(el=>observer.observe(el));
+
+// Logo click animation
+const logo=document.querySelector('.logo');
+logo.addEventListener('click', ()=>{
+logo.style.transform='scale(1.2) rotate(-10deg)';
+setTimeout(()=>{logo.style.transform='scale(1) rotate(0deg)';},600);
+});
+</script>
+
+</body>
+</html>
